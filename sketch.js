@@ -31,8 +31,8 @@ function setup() {
 	world = engine.world;
 
 	package_options ={
-    isStatic:true
-	friction:0.7	
+	isStatic:true,
+	friction:0.7
 	}
 		
 	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.5,isStatic:true});
@@ -50,14 +50,13 @@ function draw() {
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
 
-  keyPressed();
+  
   drawSprites();
- 
 }
 
 function keyPressed() {
- if (keyDown = DOWN_ARROW) {
-    Matter.Body.setSatic(package,body,false);
+ if (keyCode === DOWN_ARROW) {
+	Matter.Body.setStatic(packageBody,false);
 
     
   }
