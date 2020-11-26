@@ -31,10 +31,11 @@ function setup() {
 	world = engine.world;
 
 	package_options ={
-    isStatic:false
+    isStatic:true
+	friction:0.7	
 	}
 		
-	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:1,isStatic:true});
+	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.5,isStatic:true});
 	World.add(world, packageBody,package_options);
 	
 	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true});
@@ -56,7 +57,7 @@ function draw() {
 
 function keyPressed() {
  if (keyDown = DOWN_ARROW) {
-    package_options
+    Matter.Body.setSatic(package,body,false);
 
     
   }
